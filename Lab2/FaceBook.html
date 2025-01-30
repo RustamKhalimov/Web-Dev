@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Facebook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 900px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .left {
+            width: 30%;
+            padding: 20px;
+        }
+        
+        .left h1 {
+            color: rgb(0, 55, 255);
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        .left p{
+            font-size: 20px;
+        }
+        
+        .right {
+            width: 40%;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        input {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid rgb(125, 125, 125);
+            border-radius: 5px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .login {
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .register {
+            background-color:  rgb(44, 154, 0);
+            color: white;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        a {
+            display: block;
+            margin: 10px 0px 10px 0px;
+            color: blue;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>facebook</h1>
+            <p>Facebook помогает вам всегда оставаться на связи и общаться со своими знакомыми.</p>
+        </div>
+        <div class="right">
+            <form>
+                <input type="text" placeholder="Электронный адрес или номер телефона">
+                <input type="password" placeholder="Пароль">
+                <button class="login">Вход</button>
+                <a href="#">Забыли пароль?</a>
+                <button class="register">Создать аккаунт</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
