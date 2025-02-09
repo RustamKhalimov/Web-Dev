@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>To-Do List</title>
+
+    <style>
+        body {
+            background-color: white;
+        }
+        #todoContainer {
+            position: absolute;
+            top:15%;
+            left:30%;
+            width:600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+        }
+        #todoHeader {
+            position: absolute;
+            background: rgb(62, 62, 99);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            left:0px;
+            top:0px;
+            width:100%
+        }
+        #taskList li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border:2px solid white;
+            border-bottom: 1px solid white;
+        }
+        #taskList li:last-child {
+            border-bottom: 2px solid white;
+        }
+        .task-checkbox {
+            transform: scale(1.2);
+            margin-right: 10px;
+        }
+        .task-text {
+            flex-grow: 1;
+        }
+        .task-delete {
+            background: none;
+            border: none;
+            color: red;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .task-delete:hover {
+            color: darkred;
+        }
+        #taskInput{
+            width:400px;
+            height: 25px;
+            margin-left: 40px;
+            border-radius: 4px;
+            border:2px solid white;
+        }
+        .add-button{
+            margin-left:15px;
+            height:29px;
+            background-color: blue;
+            color:white;
+            border:1px solid white;
+            border-radius: 4px;
+        }
+        #todoInscription{
+            width:200px;
+            position: absolute;
+            top:15%;
+            left:30%;
+            font:status-bar;
+            font-size: 22px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+<p id="todoInscription">ToDo List</p>
+<div id="todoHeader">To-Do List</div>
+<div id="todoContainer">
+    <div class="p-3">
+        <div class="input-group mb-3">
+            <input type="text" id="taskInput" class="form-control" placeholder="New Task">
+            <button id="addTaskButton" class="add-button">Add</button>
+        </div>
+        <ul id="taskList" class="list-group"></ul>
+    </div>
+</div>
+
+<script>
+    document.getElementById("addTaskButton").addEventListener("click", function () {
+        let taskText = document.getElementById("taskInput");
+        if (taskText === "") return;
+
+        let li = document.createElement("li");
+        li.className = "list-group-item d-flex align-items-center";
+
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "task-checkbox";
+
+        let taskLabel = document.createElement("span");
+        taskLabel.className = "task-text ms-2";
+        taskLabel.textContent = taskText;
+
+        let deleteButton = document.createElement("button");
+        deleteButton.className = "task-delete";
+        deleteButton.innerHTML = "&#128465;";
+        deleteButton.onclick = function () {
+            li.remove();
+        };
+
+        li.appendChild(checkbox);
+        li.appendChild(taskLabel);
+        li.appendChild(deleteButton);
+        document.getElementById("taskList").appendChild(li);
+
+        document.getElementById("taskInput").value = "";
+    });
+</script>
+
+</body>
+</html>
+
+
